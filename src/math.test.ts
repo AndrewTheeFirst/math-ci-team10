@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { add, subtract, multiply, divide, factorial, average } from './math';
+import { add, subtract, multiply, divide, factorial, average, clamp, power} from './math';
 
 describe('add', () => {
   it('adds two positive numbers', () => {
@@ -61,5 +61,29 @@ describe('average', () => {
 
   it('returns null for an empty array', () => {
     expect(average([])).toBeNull();
+  });
+});
+
+describe('clamp', () => {
+  it('clamp a number too large', () => {
+    expect(clamp(44, 3, 30)).toBe(30);
+  });
+
+  it('clamp a number too little', () => {
+    expect(clamp(1, 3, 30)).toBe(3);
+  });
+
+  it('leave alone a number that is within bounds', () => {
+    expect(clamp(15, 3, 30)).toBe(15);
+  });
+});
+
+describe('power', () => {
+  it('compute the power of a natural number', () => {
+    expect(power(2, 3)).toBe(8);
+  });
+
+  it('compute the power with a negative exponent', () => {
+    expect(power(10, -2)).toBe(0.01);
   });
 });
