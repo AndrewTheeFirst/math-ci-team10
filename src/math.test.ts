@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { add, subtract, multiply, divide, factorial, average, clamp, power} from './math';
+import { add, subtract, multiply, divide, factorial, average, clamp, power, quadratic} from './math';
 
 describe('add', () => {
   it('adds two positive numbers', () => {
@@ -85,5 +85,17 @@ describe('power', () => {
 
   it('compute the power with a negative exponent', () => {
     expect(power(10, -2)).toBe(0.01);
+  });
+});
+
+describe('quadractic', () => {
+  it('compute the power of a natural number', () => {
+    expect(quadratic(1, 3, 2)).toStrictEqual(
+      [-1, -2]
+    );
+  });
+
+  it('compute the power with a negative exponent', () => {
+    expect(quadratic(1, 1, 1)).toBeNull();
   });
 });

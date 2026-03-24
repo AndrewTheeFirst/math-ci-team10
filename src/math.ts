@@ -39,3 +39,12 @@ export function average(numbers: number[]): number | null {
 export function clamp(value: number, min: number, max: number): number {
     return (value > max) ? max : (value < min ? min : value);
 }
+
+export function quadratic(a: number, b: number, c: number): [number, number] | null {
+    let discriminant: number = b**2 - 4 * a * c;
+    if (discriminant < 0)
+      return null;
+    let root1: number = (-b + Math.sqrt(discriminant)) / (2 * a);
+    let root2: number = (-b - Math.sqrt(discriminant)) / (2 * a);
+    return [root1, root2];
+}
