@@ -29,6 +29,13 @@ export function factorial(n: number): number | null {
   return result;
 }
 
+export function average(numbers: number[]): number | null {
+  if (numbers.length === 0) return null;
+  
+  const sum = numbers.reduce((acc, val) => acc + val, 0);
+  return sum / numbers.length;
+}
+
 export function clamp(value: number, min: number, max: number): number {
     return (value > max) ? max : (value < min ? min : value);
 }
