@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { add, subtract, multiply, divide, factorial } from './math';
+import { add, subtract, multiply, divide, factorial, average } from './math';
 
 describe('add', () => {
   it('adds two positive numbers', () => {
@@ -48,5 +48,18 @@ describe('factorial', () => {
 
   it('returns null for negative input', () => {
     expect(factorial(-3)).toBeNull();
+  });
+});
+
+describe('average', () => {
+  it('calculates the average of a non-empty array', () => {
+    // Basic integer result
+    expect(average([10, 20, 30])).toBe(20);
+    // Float result
+    expect(average([1, 2, 3, 4])).toBe(2.5);
+  });
+
+  it('returns null for an empty array', () => {
+    expect(average([])).toBeNull();
   });
 });
