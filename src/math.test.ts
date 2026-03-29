@@ -1,5 +1,15 @@
 import { describe, it, expect } from 'vitest';
-import { add, subtract, multiply, divide, factorial, average, clamp, power, quadratic} from './math';
+import {
+  add,
+  subtract,
+  multiply,
+  divide,
+  factorial,
+  average,
+  clamp,
+  power,
+  quadratic,
+} from './math';
 
 describe('add', () => {
   it('adds two positive numbers', () => {
@@ -90,15 +100,11 @@ describe('power', () => {
 
 describe('quadractic', () => {
   it('quadratic with real roots (1)', () => {
-    expect(quadratic(1, 3, 2)).toStrictEqual(
-      [-1, -2]
-    );
+    expect(quadratic(1, 3, 2)).toStrictEqual([-1, -2]);
   });
 
   it('quadratic with real roots (2)', () => {
-    expect(quadratic(1, 5, 6)).toStrictEqual(
-      [-2, -3]
-    );
+    expect(quadratic(1, 5, 6)).toStrictEqual([-2, -3]);
   });
 
   it('quadratic with imaginary roots', () => {
