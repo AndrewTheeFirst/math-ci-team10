@@ -89,13 +89,19 @@ describe('power', () => {
 });
 
 describe('quadractic', () => {
-  it('compute the power of a natural number', () => {
+  it('quadratic with real roots (1)', () => {
     expect(quadratic(1, 3, 2)).toStrictEqual(
       [-1, -2]
     );
   });
 
-  it('compute the power with a negative exponent', () => {
+  it('quadratic with real roots (2)', () => {
+    expect(quadratic(1, 5, 6)).toStrictEqual(
+      [-2, -3]
+    );
+  });
+
+  it('quadratic with imaginary roots', () => {
     expect(quadratic(1, 1, 1)).toBeNull();
   });
 });
